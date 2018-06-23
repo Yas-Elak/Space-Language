@@ -1,0 +1,230 @@
+accueilanimation-0.png
+size: 2000, 2000
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+img0001
+  rotate: false
+  xy: 0, 0
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+img0002
+  rotate: false
+  xy: 1000, 0
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+img0003
+  rotate: false
+  xy: 0, 1000
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+img0004
+  rotate: false
+  xy: 1000, 1000
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+
+accueilanimation-1.png
+size: 2000, 2000
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+img0005
+  rotate: false
+  xy: 0, 0
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+img0006
+  rotate: false
+  xy: 1000, 0
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+img0007
+  rotate: false
+  xy: 0, 1000
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+img0008
+  rotate: false
+  xy: 1000, 1000
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+
+accueilanimation-2.png
+size: 2000, 2000
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+img0009
+  rotate: false
+  xy: 0, 0
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+img0010
+  rotate: false
+  xy: 1000, 0
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+img0011
+  rotate: false
+  xy: 0, 1000
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+img0012
+  rotate: false
+  xy: 1000, 1000
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+
+accueilanimation-3.png
+size: 2000, 2000
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+img0013
+  rotate: false
+  xy: 0, 0
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+img0014
+  rotate: false
+  xy: 1000, 0
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+img0015
+  rotate: false
+  xy: 0, 1000
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+img0016
+  rotate: false
+  xy: 1000, 1000
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+
+accueilanimation-4.png
+size: 2000, 2000
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+img0017
+  rotate: false
+  xy: 0, 0
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+img0018
+  rotate: false
+  xy: 1000, 0
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+img0019
+  rotate: false
+  xy: 0, 1000
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+img0020
+  rotate: false
+  xy: 1000, 1000
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+
+accueilanimation-5.png
+size: 2000, 2000
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+img0021
+  rotate: false
+  xy: 0, 0
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+img0022
+  rotate: false
+  xy: 1000, 0
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+img0023
+  rotate: false
+  xy: 0, 1000
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+img0024
+  rotate: false
+  xy: 1000, 1000
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+
+accueilanimation-6.png
+size: 2000, 2000
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+img0025
+  rotate: false
+  xy: 0, 0
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+img0026
+  rotate: false
+  xy: 1000, 0
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+img0027
+  rotate: false
+  xy: 0, 1000
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1

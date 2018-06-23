@@ -1,0 +1,54 @@
+package com.yassine.space.sprites;
+
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Animation;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Vector3;
+
+/**
+ * Created by Yassine on 04-03-18.
+ */
+
+public class SpaceShip {
+    private static final int MOVEMENT = 25;
+    private static final int FRAME_COLS = 2, FRAME_ROWS = 1;
+    
+    private Animation<TextureRegion> spaceShipAnimation
+    
+    
+    private Vector3 position;
+    private SimpleAnimation spaceShipAnimation;
+    private Texture texture;
+    public Texture background;
+
+
+    public SpaceShip(int x, int y){
+        position = new Vector3(x, y, 0);
+        texture = new Texture("spaceship1.png");
+        spaceShipAnimation = new SimpleAnimation(new TextureRegion(texture), 2, 0.5f);
+        //I need to get the height of this texture from the playstate
+        background = new Texture("background2.jpg");
+    }
+
+    public void update(float dt){
+        spaceShipAnimation.update(dt);
+        position.add(MOVEMENT * dt,0 , 0);
+    }
+
+    public Vector3 getPosition() {
+        return position;
+    }
+
+    public TextureRegion getTexture() {
+        return spaceShipAnimation.getFrame();
+    }
+    public int getSpaceShipHeight() {
+        return 38;
+    }
+
+    public int getSpaceShipWidth() {
+        return 46;
+    }
+
+
+}
