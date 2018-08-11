@@ -7,6 +7,9 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.yaselak.game.states.GameStateManager;
 import com.yaselak.game.states.MenuState;
+import com.yaselak.game.states.ThemeState;
+
+import java.awt.Menu;
 
 public class SpaceLanguage extends ApplicationAdapter {
 
@@ -26,9 +29,11 @@ public class SpaceLanguage extends ApplicationAdapter {
 		batch = new SpriteBatch();
 		gsm = new GameStateManager();
 		Gdx.gl.glClearColor(0, 0, 0, 1);
-		gsm.push(new MenuState(gsm));
-	}
+		MenuState menuState = new MenuState(gsm);
+		gsm.push(menuState);
+		menuState.init();
 
+	}
 	@Override
 	public void render () {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);

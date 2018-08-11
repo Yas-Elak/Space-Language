@@ -1,9 +1,13 @@
 package com.yaselak.game.states;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
+import com.badlogic.gdx.Preferences;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.NinePatch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -11,193 +15,169 @@ import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
-import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
-import com.yaselak.game.SpaceLanguage;
+import com.yaselak.game.Consts;
 import com.yaselak.game.addtogdx.AnimatedActor;
-
-
-/**
- * Created by Yassine on 03-03-18.
- */
+import com.yaselak.game.addtogdx.SkinCreation;
 
 public class MenuState extends State {
 
     private Stage myStage;
 
-    private String vocSensA, vocSensB;
-
+    private TextureAtlas rocketAtlas;
     private Texture background;
 
-    private Table menuTable, topTable, parentTable;
-
-    private TextButton list1a, list1b, checkList1, D, F, autre;
-    private ImageButton enveloppe, speaker;
-
-    //test
-    private TextureAtlas rocketAtlas;
-    private AnimatedActor animatedActor;
-    private Animation<TextureRegion> animation;
-    private float timePassed = 0;
-    ///test
-    private boolean startplayState;
-
-
+    private Skin textButtonSkin;
     public MenuState(GameStateManager gsm) {
         super(gsm);
-        startplayState = false;
         myStage = new Stage(new ScreenViewport());
         Gdx.input.setInputProcessor(myStage);
-
-
-        //test
-        rocketAtlas = new TextureAtlas(Gdx.files.internal("rocketanimation/accueilanim.atlas"));
-        animatedActor = new AnimatedActor();
-        animation = new Animation<TextureRegion>(1/30f, rocketAtlas.getRegions());
-        animation.setPlayMode(Animation.PlayMode.LOOP);
-
-        animatedActor.setAnimation(animation);
-        ///test
-
-
-
-        //by doing divided by 2, I'm zooming in the screen
-        cam.setToOrtho(false, SpaceLanguage.WIDTH / 2, SpaceLanguage.HEIGHT / 2);
-
-        background = new Texture("123.jpg");
-
-       // Image animatedLogo = new Image(new Texture("logo.png"));
-        //https://stackoverflow.com/questions/21499759/how-can-i-add-an-animation-in-a-table-layout-in-libgdx
-
-        /*The Problem is : I can't use a ttf font AND keep the skin of a texButton
-        I need two things, an empty skin and a textbuttonstyle (for up, font, hover, down, etc)
-        First I generate the font, then I add to the skin the different state of the buttons
-        then I create a textbuttonstyle and I said to it : use these button state and the font
-        And finally I add the  textbutton style to the  skin
-        */
-
-        //Generate the empty skin
-        Skin textButtonSkin = new Skin();
-        //Generate the font
-        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/Montserrat-Light.ttf"));
-        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-        parameter.size = (int) ((Gdx.graphics.getHeight()*0.08)*0.5);
-        BitmapFont yourBitmapFont = generator.generateFont(parameter);
-        yourBitmapFont.getRegion().getTexture().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
-
-        //add the background to the skin
-        textButtonSkin.add("normalButton", new Texture("button_black_normal_blue.9.png"));
-        textButtonSkin.add("pushedButton", new Texture("button_black_pushed_blue.9.png"));
-
-        // create a new style for the text button
-        TextButton.TextButtonStyle textButtonStyle = new TextButton.TextButtonStyle();
-        textButtonStyle.up = textButtonSkin.newDrawable("normalButton");
-        textButtonStyle.down = textButtonSkin.newDrawable("pushedButton");
-        textButtonStyle.font = yourBitmapFont;
-        //add the style to the button, you can have several, just change the name "default"
-        textButtonSkin.add("default", textButtonStyle);
-
-        list1a = new TextButton("Jouer", textButtonSkin, "default");
-        list1b = new TextButton("Campagnes",textButtonSkin, "default");
-        checkList1 = new TextButton("Autres langues", textButtonSkin, "default");
-
-        //The two buttons at the top of the screen
-        enveloppe = new ImageButton(createImageButton("envelope.png"));
-        speaker =  new ImageButton(createImageButton("speaker.png"));
-
-
-        listenerButtonToStartPlayState(list1a, "vocfr.txt", "vocan.txt");
-        listenerButtonToStartPlayState(list1b, "vocan.txt", "vocfr.txt");
-
-        parentTable = new Table();
-        menuTable = new Table();
-        topTable = new Table();
-
-        //parentTable.debug();
-        parentTable.setPosition(0,0);
-        parentTable.top();
-        parentTable.setSize(Gdx.graphics.getWidth(), (Gdx.graphics.getHeight()));
-        parentTable.add(topTable);
-        parentTable.row();
-        parentTable.add(menuTable);
-
-        topTable.setSize(Gdx.graphics.getWidth(), (Gdx.graphics.getHeight()));
-        topTable.setFillParent(true);
-        topTable.top();
-        topTable.add(enveloppe).expandX().width((float) (Gdx.graphics.getWidth()*0.15)).height((float) (Gdx.graphics.getWidth()*0.15)).left().padLeft(20).padTop(20);
-        topTable.add(speaker).expandX().width((float) (Gdx.graphics.getWidth()*0.15)).height((float) (Gdx.graphics.getWidth()*0.15)).right().padRight(20).padTop(20);
-       // topTable.setDebug(true);
-        //teest
-       // Image tiger2Image = new Image(new TextureRegion(rocketAtlas,));
-
-        menuTable.setFillParent(true);
-        menuTable.add(animatedActor).width((float) (Gdx.graphics.getWidth()*0.8)).height((float) (Gdx.graphics.getWidth()*0.8)).padTop(20);;
-        menuTable.row();
-        menuTable.add(list1a).width((float) (Gdx.graphics.getWidth()*0.8)).height((float) (Gdx.graphics.getHeight()*0.08)).padTop(80);
-        menuTable.row();
-        menuTable.add(list1b).width((float) (Gdx.graphics.getWidth()*0.8)).height((float) (Gdx.graphics.getHeight()*0.08)).padTop(40);
-        menuTable.row();
-        menuTable.add(checkList1).width((float) (Gdx.graphics.getWidth()*0.8)).height((float) (Gdx.graphics.getHeight()*0.08)).padTop(40);
-        //menuTable.debug();
-
-        myStage.addActor(parentTable);
-        myStage.addActor(menuTable);
-        myStage.addActor(topTable);
+        cam.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
     }
-
     @Override
-    public void handleInput() {
-        if (startplayState) {
-            gsm.set(new PlayState(gsm, vocSensA, vocSensB));
-        }
+    public void init(){
+        Gdx.input.setCatchBackKey(true);
+
+        background = new Texture("spacebackgroundmenu.jpg");
+
+        //The logo animation,  Need the object AnimatedActor because I want to put it in a table
+        // and you can't put an animation in a table because it's not usually an actor
+        rocketAtlas = new TextureAtlas(Gdx.files.internal("animationaccueil/spaceshipanimation/spaceshipanimation.pack"));
+        AnimatedActor animatedActor = new AnimatedActor();
+        Animation<TextureRegion> animation = new Animation<TextureRegion>(1 / 30f, rocketAtlas.getRegions());
+        animation.setPlayMode(Animation.PlayMode.LOOP);
+        animatedActor.setAnimation(animation);
+        //end of the logo animation
+
+        //I use my SkinCreation object to create a skin for my buttons
+        SkinCreation skinCreation = new SkinCreation();
+        textButtonSkin = skinCreation.CreateSkin("fonts/Montserrat-Light.ttf",false, Consts.fontSizeBtn);
+
+        TextButton playBtn = new TextButton("Etudier", textButtonSkin);
+        TextButton survivalBtn = new TextButton("Jouer", textButtonSkin);
+        TextButton campagnBtn = new TextButton("Magasin", textButtonSkin);
+        TextButton otherLanguageBtn = new TextButton("+ de languages", textButtonSkin);
+
+        //TODO add listener for the other state
+        listenerButtonToStartThemeState(playBtn, true);
+        listenerButtonToStartThemeState(survivalBtn, false);
+        listenerButtonToStartShopState(campagnBtn);
+
+
+        Table menuTable = new Table();
+        menuTable.setFillParent(true);
+        menuTable.setPosition(0, 0);
+        menuTable.top();
+        menuTable.setSize(Gdx.graphics.getWidth(), (Gdx.graphics.getHeight()));
+        menuTable.add(animatedActor).width((float) (Gdx.graphics.getWidth()*0.8)).height((float) (Gdx.graphics.getWidth()*0.8)).expandY();
+        menuTable.row();
+        menuTable.add(playBtn).width((float) (Gdx.graphics.getWidth()*0.8)).height((float) (Gdx.graphics.getHeight()*0.08)).expandY();
+        menuTable.row();
+        menuTable.add(survivalBtn).width((float) (Gdx.graphics.getWidth()*0.8)).height((float) (Gdx.graphics.getHeight()*0.08)).expandY();
+        menuTable.row();
+        menuTable.add(campagnBtn).width((float) (Gdx.graphics.getWidth()*0.8)).height((float) (Gdx.graphics.getHeight()*0.08)).expandY();
+        menuTable.row();
+        //menuTable.add(otherLanguageBtn).width((float) (Gdx.graphics.getWidth()*0.8)).height((float) (Gdx.graphics.getHeight()*0.08)).expandY();
+
+        myStage.addActor(menuTable);
+        System.out.println(playBtn.getHeight());
+        Preferences prefsUrl = Gdx.app.getPreferences("MyPrefsUrl");
+        Preferences prefsBought = Gdx.app.getPreferences("MyPrefsBought");
+        Preferences prefsScore = Gdx.app.getPreferences("MyPrefsScore");
+
+       //  prefsBought.clear();        prefsScore.clear();        prefsUrl.clear();
+
+        if (!prefsScore.contains("firstTime")) {
+
+            System.out.println("I put prefs+++++++++++++++++++++++++++");
+            prefsUrl.putString("shipUrlActif", "spaceship1");
+            prefsUrl.putString("monsterUrlActif", "monster1");
+            prefsScore.putInteger("highScore", 200);
+            prefsScore.putBoolean("soundOn", false);
+            prefsScore.putBoolean("boughtTheGame", false);
+            prefsScore.putBoolean("firstTime", false);
+            prefsBought.putBoolean("spaceship1Bought", true);
+            prefsBought.putBoolean("spaceship2Bought", false);
+            prefsBought.putBoolean("spaceship3Bought", false);
+            prefsBought.putBoolean("spaceship4Bought", false);
+            prefsBought.putBoolean("spaceship5Bought", false);
+            prefsBought.putBoolean("spaceship6Bought", false);
+            prefsBought.putBoolean("spaceship7Bought", false);
+            prefsBought.putBoolean("spaceship8Bought", false);
+            prefsBought.putBoolean("spaceship9Bought", false);
+            prefsBought.putBoolean("spaceship10Bought", false);
+            prefsBought.putBoolean("monster1Bought", true);
+            prefsBought.putBoolean("monster2Bought", false);
+            prefsBought.putBoolean("monster3Bought", false);
+            prefsBought.putBoolean("monster4Bought", false);
+            prefsBought.putBoolean("monster5Bought", false);
+            prefsBought.putBoolean("monster6Bought", false);
+            prefsBought.putBoolean("monster7Bought", false);
+            prefsBought.putBoolean("monster8Bought", false);
+            prefsBought.putBoolean("monster9Bought", false);
+            prefsBought.putBoolean("monster10Bought", false);
+            prefsBought.flush();
+            prefsScore.flush();
+            prefsUrl.flush();
+
+        } else System.out.println("I DONT PUT PREFS");
 
     }
 
     @Override
     public void update(float dt) {
-        handleInput();
     }
 
     @Override
     public void render(SpriteBatch sb) {
         sb.setProjectionMatrix(cam.combined);
-
+        if (Gdx.input.isKeyPressed(Input.Keys.BACK)){
+           Gdx.app.exit();
+        }
         sb.begin();
-        sb.draw(background, 0, 0);
-
+        sb.draw(background, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         sb.end();
         myStage.act();
         myStage.draw();
     }
-
     @Override
     public void dispose() {
         background.dispose();
+        rocketAtlas.dispose();
+        textButtonSkin.dispose();
     }
-
-    private TextureRegionDrawable createImageButton(String string){
-        Texture myTexture = new Texture(Gdx.files.internal(string));
-        TextureRegion myTextureRegion = new TextureRegion(myTexture);
-        TextureRegionDrawable myTexRegionDrawable = new TextureRegionDrawable(myTextureRegion);
-        return myTexRegionDrawable;
-    }
-
-    private void listenerButtonToStartPlayState(final TextButton myButton, final String listSensA, final String listSensB) {
+    private void listenerButtonToStartThemeState(final TextButton myButton, final boolean study) {
         myButton.addListener(new InputListener() {
 
             @Override
             public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
-                System.out.print("eeeeeeeeeeeeee");
-                vocSensA = listSensA;
-                vocSensB= listSensB;
-                startplayState = true;
+                dispose();
+                ThemeState themeState = new ThemeState(gsm, study);
+                gsm.set(themeState);
+                themeState.init();
                 return true;
             }
         });
     }
+
+    private void listenerButtonToStartShopState(final TextButton myButton) {
+        myButton.addListener(new InputListener() {
+
+            @Override
+            public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
+                dispose();
+                ShopState shopState = new ShopState(gsm);
+                gsm.set(shopState);
+                shopState.init();
+                return true;
+            }
+        });
+    }
+
+
+
 
 }

@@ -23,8 +23,7 @@ public abstract class State {
         mouse = new Vector3();
     }
 
-    protected abstract void handleInput();
-
+    public abstract void init();
     //an update will need de deltatime (dt), it's the time difference
     //between a frame rendered and the next frame rendered
     public abstract void update(float dt);
