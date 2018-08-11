@@ -10,44 +10,65 @@ explo1
   orig: 34, 34
   offset: 0, 0
   index: -1
-explo2
+explo10
   rotate: false
   xy: 37, 1
   size: 34, 34
   orig: 34, 34
   offset: 0, 0
   index: -1
-explo3
+explo2
   rotate: false
   xy: 73, 1
   size: 34, 34
   orig: 34, 34
   offset: 0, 0
   index: -1
-explo4
+explo3
   rotate: false
   xy: 109, 1
   size: 34, 34
   orig: 34, 34
   offset: 0, 0
   index: -1
-explo5
+explo4
   rotate: false
   xy: 145, 1
   size: 34, 34
   orig: 34, 34
   offset: 0, 0
   index: -1
-explo6
+explo5
   rotate: false
   xy: 181, 1
   size: 34, 34
   orig: 34, 34
   offset: 0, 0
   index: -1
-explo7
+explo6
   rotate: false
   xy: 217, 1
+  size: 34, 34
+  orig: 34, 34
+  offset: 0, 0
+  index: -1
+explo7
+  rotate: false
+  xy: 253, 1
+  size: 34, 34
+  orig: 34, 34
+  offset: 0, 0
+  index: -1
+explo8
+  rotate: false
+  xy: 289, 1
+  size: 34, 34
+  orig: 34, 34
+  offset: 0, 0
+  index: -1
+explo9
+  rotate: false
+  xy: 325, 1
   size: 34, 34
   orig: 34, 34
   offset: 0, 0
