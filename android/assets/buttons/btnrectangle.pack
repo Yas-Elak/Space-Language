@@ -1,0 +1,69 @@
+
+btnrectangle.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+btnnormalblue
+  rotate: false
+  xy: 1, 155
+  size: 75, 75
+  split: 1, 1, 1, 1
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+btnnormalgreen
+  rotate: false
+  xy: 1, 78
+  size: 75, 75
+  split: 1, 1, 1, 1
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+btnnormalgrey
+  rotate: false
+  xy: 78, 155
+  size: 75, 75
+  split: 1, 1, 1, 1
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+btnnormalred
+  rotate: false
+  xy: 1, 1
+  size: 75, 75
+  split: 1, 1, 1, 1
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+btnpushedblue
+  rotate: false
+  xy: 78, 78
+  size: 75, 75
+  split: 1, 1, 1, 1
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+btnpushedgreen
+  rotate: false
+  xy: 155, 155
+  size: 75, 75
+  split: 1, 1, 1, 1
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+btnpushedgrey
+  rotate: false
+  xy: 78, 1
+  size: 75, 75
+  split: 1, 1, 1, 1
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+btnpushedred
+  rotate: false
+  xy: 155, 78
+  size: 75, 75
+  split: 1, 1, 1, 1
+  orig: 75, 75
+  offset: 0, 0
+  index: -1

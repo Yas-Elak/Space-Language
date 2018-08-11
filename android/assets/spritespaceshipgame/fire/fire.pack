@@ -1,0 +1,145 @@
+
+fire.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+FIRE00
+  rotate: false
+  xy: 1, 415
+  size: 810, 412
+  orig: 810, 412
+  offset: 0, 0
+  index: -1
+FIRE02
+  rotate: false
+  xy: 1, 1
+  size: 810, 412
+  orig: 810, 412
+  offset: 0, 0
+  index: -1
+
+fire2.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+FIRE04_resultat_resultat
+  rotate: false
+  xy: 1, 415
+  size: 810, 412
+  orig: 810, 412
+  offset: 0, 0
+  index: -1
+FIRE06_resultat_resultat
+  rotate: false
+  xy: 1, 1
+  size: 810, 412
+  orig: 810, 412
+  offset: 0, 0
+  index: -1
+
+fire3.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+FIRE08_resultat_resultat
+  rotate: false
+  xy: 1, 415
+  size: 810, 412
+  orig: 810, 412
+  offset: 0, 0
+  index: -1
+FIRE10_resultat_resultat
+  rotate: false
+  xy: 1, 1
+  size: 810, 412
+  orig: 810, 412
+  offset: 0, 0
+  index: -1
+
+fire4.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+FIRE12_resultat_resultat
+  rotate: false
+  xy: 1, 415
+  size: 810, 412
+  orig: 810, 412
+  offset: 0, 0
+  index: -1
+FIRE14_resultat_resultat
+  rotate: false
+  xy: 1, 1
+  size: 810, 412
+  orig: 810, 412
+  offset: 0, 0
+  index: -1
+
+fire5.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+FIRE16_resultat_resultat
+  rotate: false
+  xy: 1, 415
+  size: 810, 412
+  orig: 810, 412
+  offset: 0, 0
+  index: -1
+FIRE18_resultat_resultat
+  rotate: false
+  xy: 1, 1
+  size: 810, 412
+  orig: 810, 412
+  offset: 0, 0
+  index: -1
+
+fire6.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+FIRE20_resultat_resultat
+  rotate: false
+  xy: 1, 415
+  size: 810, 412
+  orig: 810, 412
+  offset: 0, 0
+  index: -1
+FIRE22_resultat_resultat
+  rotate: false
+  xy: 1, 1
+  size: 810, 412
+  orig: 810, 412
+  offset: 0, 0
+  index: -1
+
+fire7.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+FIRE24_resultat_resultat
+  rotate: false
+  xy: 1, 415
+  size: 810, 412
+  orig: 810, 412
+  offset: 0, 0
+  index: -1
+FIRE26_resultat_resultat
+  rotate: false
+  xy: 1, 1
+  size: 810, 412
+  orig: 810, 412
+  offset: 0, 0
+  index: -1
+
+fire8.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+FIRE28_resultat_resultat
+  rotate: false
+  xy: 1, 1
+  size: 810, 412
+  orig: 810, 412
+  offset: 0, 0
+  index: -1
