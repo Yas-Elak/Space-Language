@@ -379,8 +379,6 @@ public class SpaceShipState extends PlayState {
                 return true;
             }
         });
-
-
     }
     protected void initializeTextButtons(){
         super.initializeTextButtons();
@@ -388,4 +386,5 @@ public class SpaceShipState extends PlayState {
             listenerButton(tb);
         }
     } //Commented
+
 }

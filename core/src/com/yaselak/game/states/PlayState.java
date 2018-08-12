@@ -259,11 +259,10 @@ public class PlayState extends State{
         myButton.addListener(new InputListener() {
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
-                //quit the playstate and restart the menustae
                 dispose();
-                PlayState playState =  new PlayState(gsm, vocabularyPath, langueA, langueB);
-                gsm.set(playState);
-                playState.init();
+                ThemeState themeState =  new ThemeState(gsm, false);
+                gsm.set(themeState);
+                themeState.init();
                 return true;
             }
         });
