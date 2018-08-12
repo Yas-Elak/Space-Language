@@ -10,10 +10,6 @@ import java.util.List;
  */
 
 public class Consts {
-    //PLAYSTATE VARIABLE
-
-        //THE SPACESHIPS
-    public static final int spaceShip1Height = 36;
 
     //font size
     public static final int fontSizeBtn = (int) ((Gdx.graphics.getHeight()*0.04));
@@ -56,6 +52,7 @@ public class Consts {
     public static final float p80w = (float) (Gdx.graphics.getWidth()*0.8);
 
     public static final float bkgSize = (float) (Gdx.graphics.getHeight()*0.25);
+    public static final int atmoSize = 34;
 
     public static final float screenWidth = (Gdx.graphics.getWidth());
 

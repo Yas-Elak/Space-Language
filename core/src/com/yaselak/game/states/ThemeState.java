@@ -210,9 +210,9 @@ public class ThemeState extends State {
                     System.out.println(langageOne +""+langageTwo);
 
                 } else{
-                    PlayState playState =  new PlayState(gsm, pathToVocabulary, langageOne, langageTwo);
-                    gsm.set(playState);
-                    playState.init();
+                    SpaceShipState spaceShipState =  new SpaceShipState(gsm, pathToVocabulary, langageOne, langageTwo);
+                    gsm.set(spaceShipState);
+                    spaceShipState.init();
                 }
 
                 return true;
